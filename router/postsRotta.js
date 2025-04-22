@@ -5,7 +5,7 @@ const express =require('express');
 const router = express.Router();
 
 //Riprendo l'array
-const post = require('../posts')
+const post = require('../data/posts')
 
 //index
 router.get('/', (req,res)=> {
