@@ -18,7 +18,12 @@ function store(req,res){
 
 //update
 function update(req,res){
-    res.send('Modifica totale del post')
+    res.send(`Modifica totale del post ${req.params.id}`)
+}
+
+//modify
+function modify(req,res){
+    res.send(`Modifica parziale del post ${req.params.id}`)
 }
 
 
