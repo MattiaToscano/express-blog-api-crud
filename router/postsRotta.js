@@ -5,7 +5,7 @@ const express =require('express');
 const router = express.Router();
 
 //importo il controller posts
-const postsController = require('../controller/postsController')
+const postsController = require('../controller/postsController.js')
 
 //Riprendo l'array
 const post = require('../data/posts')
@@ -14,21 +14,21 @@ const post = require('../data/posts')
 router.get('/', postsController.index);
 
 //Show
-router.get('/', postsController.show);
+router.get('/:id', postsController.show);
 
 //Store
 router.post('/', postsController.store);
 
 //Update
-router.put('/', postsController.update);
+router.put('/:id', postsController.update);
 
 //Modify
-router.patch('/', postsController.modify);
+router.patch('/:id', postsController.modify);
 
 //Destroy
-router.delete('/', postsController.destroy);
+router.delete('/:id', postsController.destroy);
 
 //Esporto postsRotta
-module.exports =(router)
+module.exports = router
 
 

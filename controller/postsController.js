@@ -3,19 +3,28 @@ const posts = require('../data/posts.js')
 
 //index
 function index(req,res){
-    //res.json(posts);
-
     //uso delle query string
-    const titoloPost=posts;
+    const titoloPost = req.query.title; 
+
+    //Creo una variabile che contiene il post filtrato
+    let postFiltrato = posts;
 
     //check
+    if(titoloPost){
+        postFiltrato = posts.filter((post)=>{
+            return post.title.includes(titoloPost);
+        });
+    }
     
+    //Risposta
+    res.json(postFiltrato);
 } 
 
 //show
 function show(req,res){
     const id = parseInt(req.params.id);
-    const post = post.find(p => p.id ===id);
+    const post = posts.find(p => p.id === id);
+    
     if (post) {
         res.json(post);
     }
@@ -23,7 +32,7 @@ function show(req,res){
         //setto lo stato
         res.status(404);
         return res.json({
-            message: `Post numero ${req.params.id} vuoto`
+            message: `Post numero ${req.params.id} non trovato`
         });
     }
 }
@@ -48,6 +57,6 @@ function destroy(req,res){
     res.send(`Èliminazione del post ${req.params.id}`)
 }
 
-module.exports(index,show,store,update,modify,destroy)
+module.exports={index,show,store,update,modify,destroy}
 
 
