@@ -3,12 +3,29 @@ const posts = require('../data/posts.js')
 
 //index
 function index(req,res){
-    res.json(posts);
+    //res.json(posts);
+
+    //uso delle query string
+    const titoloPost=posts;
+
+    //check
+    
 } 
 
 //show
 function show(req,res){
-    res.json(`Mostro post ${req.params.id}`);
+    const id = parseInt(req.params.id);
+    const post = post.find(p => p.id ===id);
+    if (post) {
+        res.json(post);
+    }
+    else{
+        //setto lo stato
+        res.status(404);
+        return res.json({
+            message: `Post numero ${req.params.id} vuoto`
+        });
+    }
 }
 
 //store
@@ -31,6 +48,6 @@ function destroy(req,res){
     res.send(`Èliminazione del post ${req.params.id}`)
 }
 
-
+module.exports(index,show,store,update,modify,destroy)
 
 
