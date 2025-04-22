@@ -7,3 +7,7 @@ function index(req,res){
 } 
 
 //show
+function show(req,res){
+    res.json(`Mostro post ${req.params.id}`);
+}
+
