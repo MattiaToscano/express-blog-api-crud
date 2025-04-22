@@ -11,3 +11,9 @@ function show(req,res){
     res.json(`Mostro post ${req.params.id}`);
 }
 
+//store
+function store(req,res){
+    res.send('Inserimento nuovo post')
+}
+
+
