@@ -2,4 +2,8 @@
 const posts = require('../data/posts.js')
 
 //index
-function 
+function index(req,res){
+    res.json(posts);
+} 
+
+//show
