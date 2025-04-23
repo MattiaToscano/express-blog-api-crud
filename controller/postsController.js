@@ -47,8 +47,17 @@ function store(req,res){
     //Recupero body
     console.log(req.body);
 
+    //creo nuovo oggetto da inserire
+    const nuovoPost = {
+        id: nuovoId,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    };
 
     
+
     
 }
 
