@@ -39,7 +39,17 @@ function show(req,res){
 
 //store
 function store(req,res){
-    res.send('Inserimento nuovo post')
+    //res.send('Inserimento nuovo post')
+
+    //Inizializzo id dell'elemento da inserire
+    const nuovoId= posts[posts.lenght-1].id +1;
+
+    //Recupero body
+    console.log(req.body);
+
+
+    
+    
 }
 
 //update
