@@ -4,6 +4,9 @@ const express = require('express');
 //Inizializzo express
 const app = express();
 
+//Indico ad express di trattare i body come json
+app.use(express.json());
+
 //Definisco la porta
 const port = 3000;
 
