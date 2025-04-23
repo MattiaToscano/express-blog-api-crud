@@ -75,9 +75,16 @@ function update(req,res){
     const post = posts.find(post => post.id ===id);
 
     //check esistenza post
+    if(!post){
 
+        //importare lo stato
+        res.status(404);
 
-
+        //messaggio di ritorno per l'utente
+        return res.json({
+            message : `Post numero ${req.params.id} non trovato`
+        });
+    }
 }
 
 //modify
