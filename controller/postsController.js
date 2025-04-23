@@ -56,7 +56,12 @@ function store(req,res){
         tags: req.body.tags
     };
 
+    //inserisco il nuovo oggetto nell'array
+    posts.push(nuovoPost);
+
     
+
+
 
     
 }
