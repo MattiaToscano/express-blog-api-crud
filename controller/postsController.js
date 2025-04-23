@@ -59,16 +59,25 @@ function store(req,res){
     //inserisco il nuovo oggetto nell'array
     posts.push(nuovoPost);
 
-    
+    //restituisco la lista aggiornata
+    res.json(posts);
 
-
-
-    
 }
 
 //update
 function update(req,res){
-    res.send(`Modifica totale del post ${req.params.id}`)
+   // res.send(`Modifica totale del post ${req.params.id}`)
+
+    //recuperare il valore del parametro
+    const id = parseInt(req.params.id);
+
+    //recupero post
+    const post = posts.find(post => post.id ===id);
+
+    //check esistenza post
+
+
+
 }
 
 //modify
