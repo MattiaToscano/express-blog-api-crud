@@ -13,6 +13,10 @@ const port = 3000;
 //Importo il router
 const postsRotta = require ('./router/postsRotta');
 
+//Importo middlewares
+const errorsHandler = require ('./middlewares/errorsHandler');
+const notFound = require ('./middlewares/notFound');
+
 //Utilizzo postsRotta 
 app.use('/posts', postsRotta);
 
