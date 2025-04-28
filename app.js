@@ -21,6 +21,9 @@ app.get('/', (req,res) =>{
     res.send('Mainpage')
 })
 
+app.use(errorsHandler);
+app.use(notFound);
+
 //Faccio rimanere il server in ascolto
 app.listen(port,()=>{
     console.log(`Il server è in ascolto sulla porta ${port}`)
